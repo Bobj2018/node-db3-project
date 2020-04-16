@@ -20,8 +20,8 @@ function add(data) {
 	return db('schemes').insert(data);
 }
 
-function addStep(data) {
-	return db('steps').insert(data);
+function addStep(data, scheme_id) {
+	return db('steps').insert({ ...data, scheme_id });
 }
 
 function update(data, id) {
